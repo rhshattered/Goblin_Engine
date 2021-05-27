@@ -14,6 +14,7 @@ namespace gui {
 	bool wireframe = false;
 	bool fillframe = false;
 	bool pointframe = false;
+	bool shaderThingy = true;
 	ImVec4 clear_color(0.1, 0.1, 0.1, 0.1);
 
 	static const char* items[]{ "", "Baaaa", "Oaaaa" };
@@ -67,6 +68,12 @@ namespace gui {
 					else {
 						glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 					}
+				if (ImGui::Checkbox("Shader Model", &shaderThingy))
+					if (shaderThingy == true)
+						glShadeModel(GL_SMOOTH);
+					else
+						glShadeModel(GL_FLAT);
+
 				ImGui::EndMenu();
 			}
 

@@ -85,7 +85,7 @@ private:
 		while (!glfwWindowShouldClose(window))
 		{
 			glClear(GL_COLOR_BUFFER_BIT);
-			glBegin(GL_QUADS);              // Each set of 4 vertices form a quad
+			glBegin(GL_QUADS);   // Each set of 4 vertices form a quad
 			glColor3f(1.0f, 0.0f, 0.0f); // Red
 			glVertex2f(-0.5f, -0.5f);     
 			glColor3f(0.0, 0.0, 1.0);// x, y
@@ -95,6 +95,7 @@ private:
 			glColor3f(0.0, 1.0, 1.0);
 			glVertex2f(-0.5f, 0.5f);
 			glEnd();
+
 			gui::draw();
 			glfwPollEvents();
 			glfwSwapBuffers(window);

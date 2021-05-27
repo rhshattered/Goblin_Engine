@@ -3,10 +3,10 @@
 #include <iostream>
 #include <Windows.h>
 #include "Customs.h"
-BOOL WINAPI FreeConsole(VOID);
 
 int main()
 {
+    BOOL WINAPI FreeConsole(VOID);
     renderer instance;
     instance.OpenGL(800, 600, true);
 }
