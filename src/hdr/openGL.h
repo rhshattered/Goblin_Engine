@@ -3,7 +3,6 @@
 #include <GLFW/glfw3.h>
 #include <gui.h>
 GLFWwindow* window;
-
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void close_window_callback(GLFWwindow* window);
 namespace gl {
@@ -13,7 +12,6 @@ namespace gl {
 		GLFWwindow* window;
 		if (!glfwInit())
 			exit(EXIT_FAILURE);
-		imGL::create();
 	}
 
 	void createWin(int width, int height)
@@ -25,6 +23,8 @@ namespace gl {
 			exit(EXIT_FAILURE);
 		}
 
+		imGL::create();
+
 		glfwMakeContextCurrent(window);
 
 		imGL::init(window);
@@ -32,6 +32,8 @@ namespace gl {
 
 		glfwSetWindowAspectRatio(window, 16, 9);
 
+		glfwSetWindowCloseCallback(window, close_window_callback);
+		glfwSetWindowSizeCallback(window, framebuffer_size_callback);
 	}
 
 	void draw()
@@ -40,31 +42,10 @@ namespace gl {
 
 		while (!glfwWindowShouldClose(window))
 		{
-			float ratio;
-			int width, height;
-			glfwGetFramebufferSize(window, &width, &height);
-			ratio = width / (float)height;
-			glViewport(0, 0, width, height);
 			glClear(GL_COLOR_BUFFER_BIT);
-			glMatrixMode(GL_PROJECTION);
-			glLoadIdentity();
-			glOrtho(-ratio, ratio, -1.f, 1.f, 1.f, -1.f);
-			glMatrixMode(GL_MODELVIEW);
-			glLoadIdentity();
-			glRotatef((float)glfwGetTime() * 50.f, 10.f, 10.f, 10.f);
-			glBegin(GL_QUADS);
-			glColor3f(1.f, 0.f, 0.f);
-			glVertex3f(-0.5f, -0.5, 0.f);
 
-			glColor3f(0.f, 1.f, 0.f);
-			glVertex3f(-0.5f, 0.5, 0.f);
-
-			glColor3f(0.f, 0.f, 1.f);
-			glVertex3f(0.5f, 0.5, 0.f);
-
-			glVertex3f(0.5f, -0.5f, 0.0f);
-
-			glEnd();
+			// Render a color-cube consisting of 6 quads with different colors
+			
 			imGL::draw(window);
 			glfwSwapBuffers(window);
 			glfwPollEvents();
@@ -75,7 +56,6 @@ namespace gl {
 	void terminate()
 	{
 		imGL::exit();
-		glfwDestroyWindow(window);
 		glfwTerminate();
 		exit(EXIT_SUCCESS);
 	}

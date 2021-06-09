@@ -13,5 +13,5 @@ int CALLBACK WinMain(
 	__in  int nCmdShow
 )
 {
-	rendererGL(1000, 1000);
+	select(1920, 1080);
 }

@@ -77,9 +77,16 @@
     <ClInclude Include="src\hdr\openGL.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Dependencies\GLFW\include\GLFW\glfw3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Dependencies\GLFW\include\GLFW\glfw3native.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Library Include="Dependencies\GLEW\lib\Release\x64\glew32s.lib" />
+    <Library Include="Dependencies\GLFW\lib-vc2019\glfw3.lib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="imgui.ini" />
