@@ -12,3 +12,7 @@ https://trello.com/b/vHABd1JW/goblin-game-engine
 
 ## Examples
 ![goblin example](https://user-images.githubusercontent.com/53288338/120904567-8b143380-c612-11eb-931a-08349218d41e.jpg)
+
+
+## Dev Comments
+-Holy Hell i need to update this repo i switched to glad because glew is cringe but never pushed</br>
