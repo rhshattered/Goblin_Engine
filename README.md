@@ -3,10 +3,10 @@
 
 Goblin_Engine is a open-source game engine created by DarkWare
 ## Features
--Modern OpenGL Renderer
--Simple to use SDK
--Easy to use Gui
--Frequent weekly updates
+-Modern OpenGL Renderer</br>
+-Simple to use SDK</br>
+-Easy to use Gui</br>
+-Frequent weekly updates</br>
 ## Development Board
 https://trello.com/b/vHABd1JW/goblin-game-engine
 
